@@ -14,6 +14,8 @@ class App extends React.Component {
 
     this.setState({ card: response.data });
     console.log(response.data);
+    console.log(response.data.prices.usd);
+    console.log(response.data.image_uris.normal);
   };
 
   render() {
@@ -22,8 +24,8 @@ class App extends React.Component {
         <SearchBar onSubmit={this.onSearchSubmit} />
         <div>Found: {this.state.card.name}</div>
         <div>Artist: {this.state.card.artist}</div>
-        {/* <div>Price: {this.state.card.prices.usd}</div>
-        <img
+        <div>Price: {this.state.card.prices.usd}</div>
+        {/* <img
           src={this.state.card.image_uris.normal}
           alt={this.state.card.name}
         /> */}
