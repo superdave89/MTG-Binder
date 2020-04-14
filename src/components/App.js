@@ -1,7 +1,8 @@
 import React from "react";
 import scryfall from "../api/Scryfall";
 import SearchBar from "./SearchBar";
-// import CardDisplay from "./CardDisplay";
+import CardInfo from "./CardInfo";
+import CardDisplay from "./CardDisplay";
 
 class App extends React.Component {
   state = { card: {} };
@@ -21,11 +22,14 @@ class App extends React.Component {
         <SearchBar onSubmit={this.onSearchSubmit} />
         <div>Found: {this.state.card.name}</div>
         <div>Artist: {this.state.card.artist}</div>
-        {/* <img
+        {/* <div>Price: {this.state.card.prices.usd}</div>
+        <img
           src={this.state.card.image_uris.normal}
           alt={this.state.card.name}
         /> */}
-        {/* <CardDisplay card={this.state.card.image_uris.normal} /> */}
+        <CardDisplay card={this.state.card} />
+
+        <CardInfo card={this.state.card} />
       </div>
     );
   }
