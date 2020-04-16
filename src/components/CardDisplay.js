@@ -9,7 +9,8 @@ const CardDisplay = ({ card }) => {
 
   return (
     <div className="ui segment">
-      <img src={card.normal} alt={card.name} />
+      {/* <img src={card.normal} alt={card.name} /> */}
+      CardDisplay
     </div>
   );
 };
