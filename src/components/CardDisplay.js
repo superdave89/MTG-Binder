@@ -5,12 +5,13 @@ const CardDisplay = ({ card }) => {
     return <div>No image available</div>;
   }
 
-  const cardSrc = `https:api.scryfall.com/cards/named/${card.data}`;
-
   return (
     <div className="ui segment">
-      {/* <img src={card.normal} alt={card.name} /> */}
-      CardDisplay
+      <div>
+        {!card.image_uris ? null : (
+          <img src={card.image_uris.normal} alt={card.name} />
+        )}
+      </div>
     </div>
   );
 };
